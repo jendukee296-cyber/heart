@@ -1,13 +1,45 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>My Google AI Studio App</title>
-  </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
-  </body>
-</html>
+<div class="container">
+    <div class="heart"></div>
+    <h1>I love you</h1>
+</div>
+.container {
+    text-align: center;
+    margin-top: 100px;
+}
+
+.heart {
+    background-color: red;
+    display: inline-block;
+    height: 50px;
+    width: 50px;
+    margin: 0 10px;
+    transform: rotate(-45deg);
+    position: relative;
+    animation: beat 1s infinite;
+}
+
+.heart:before, .heart:after {
+    content: "";
+    background-color: red;
+    border-radius: 50%;
+    height: 50px;
+    width: 50px;
+    position: absolute;
+}
+
+.heart:before { top: -25px; left: 0; }
+.heart:after { left: 25px; top: 0; }
+
+@keyframes beat {
+    0% { transform: scale(1) rotate(-45deg); }
+    50% { transform: scale(1.2) rotate(-45deg); }
+    100% { transform: scale(1) rotate(-45deg); }
+}
+
+h1 {
+    font-family: sans-serif;
+    color: #ff4d4d;
+    margin-top: 20px;
+}
+
 
